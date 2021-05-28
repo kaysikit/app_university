@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var example1_data = new Array()
+        example1_data.teacher_name = "Адарченко Владимир Анатольевич"
+        example1_data.obj_name = "Функциональный анализ (Практика)"
+        example1_data.obj_date = "15.05.2021"
+        example1_data.obj_start = "09:40"
+        example1_data.obj_end = "11:10"
+        example1_data.cab_number = "419"
+
+        var example2_data = new Array()
+        example2_data.teacher_name = "Потапов Валентин Владимирович"
+        example2_data.obj_name = "Управление IT-проектами"
+        example2_data.obj_date = "20.05.2021"
+        example2_data.obj_start = "13:15"
+        example2_data.obj_end = "14:45"
+        example2_data.cab_number = "А-13"
+    </script>
+    <button id="example_1" onclick="set(example1_data)" type="button">Пример 1</button></button>
+    <button id="example_2" onclick="set(example2_data)" type="button">Пример 2</button></button>
+    <br>
+    <br>
+    <p>Введите ФИО преподавателя</p><input id="teacher-name" type="text">
+    <br>
+    <p>Введите название предмета</p><input id="obj-name" type="text">
+    <br>
+    <p>Введите дату проведения</p><input id="obj-date" type="text">
+    <br>
+    <p>Введите время начала</p><input id="obj-start" type="text">
+    <br>
+    <p>Введите время окончания</p><input id="obj-end" type="text">
+    <br>
+    <p>Введите номер кабинета</p><input id="cab-number" type="text">
+    <br>
+    <p>Сделать запись в базе данных?</p><input id="check-box" type="checkbox">
+    <br>
+    <br>
+    <button id="submit-button" onclick="generate()" type="button">Сгенерировать код</button></button>
+    <br>
+    <br>
+    <div id="qr_code"></div>
+    <script>
+    var teacher_name = document.getElementById("teacher-name")
+        var obj_name = document.getElementById("obj-name")
+        var obj_date = document.getElementById("obj-date")
+        var obj_start = document.getElementById("obj-start")
+        var obj_end = document.getElementById("obj-end")
+        var cab_number = document.getElementById("cab-number")
+        var check_box = document.getElementById("check-box")
+    function set(example)
+    {
+        teacher_name.value = example.teacher_name
+        obj_name.value = example.obj_name
+        obj_date.value = example.obj_date
+        obj_start.value = example.obj_start
+        obj_end.value = example.obj_end
+        cab_number.value = example.cab_number
+        check_box.value = false
+    }
+    function generate() {
+        var qr_code = document.getElementById("qr_code")
+            if (qr_code.childElementCount != 0)
+            {
+                qr_code.removeChild(qr_code.lastChild)
+            }
+            if (teacher_name.value && obj_name.value && obj_date.value && obj_start.value && obj_end.value && cab_number.value)
+            {
+            var img = document.createElement("img");
+            img.src = "http://qrcoder.ru/code/?" + teacher_name.value + "_" + obj_name.value + "_" +  obj_date.value + "_" +   obj_start.value + "_" +   obj_end.value + "_" +   cab_number.value + "&4&0";
+            var src = document.getElementById("qr_code");
+            src.appendChild(img)  
+            }
+    }
+    </script>
+</body>
+</html>
