@@ -12,35 +12,17 @@
         <img class="header_img" src="/img/1.jpg" alt="шапка">
     </div>
 
-    <div class="container">
-        <ul class="menu">
-            <li class="menu_item">
-                <h3>Мои настройки</h3>
-            </li>
-            <li class="menu_item">
-                <h3>Библиотечная система</h3>
-            </li>
-            <li class="menu_item">
-                <h3>Контакты группы</h3>
-            </li>
-            <li class="menu_item">
-                <h3>Результаты аттестации</h3>
-            </li>
-            <li class="menu_item">
-                <h3>План пересдач</h3>
-            </li>
-            <li class="menu_item">
-                <h3>Мои сообщения</h3>
-            </li>
-            <li class="menu_item">
-                <h3>Мои заявки</h3>
-            </li>
-            <li class="menu_item">
-                <h3>Опросы</h3>
-            </li>
-        </ul>
-
-    </div>
+    <div class="form_auth_block">
+        <div class="form_auth_block_content">
+          <form class="form_auth_style" action="#" method="post">
+            <label>Логин</label>
+            <input type="email" name="auth_email" placeholder="Введите Ваш имейл" required >
+            <label>Пароль</label>
+            <input type="password" name="auth_pass" placeholder="Введите пароль" required >
+            <button class="form_auth_button" type="submit" name="form_auth_submit">Войти</button>
+          </form>
+        </div>
+      </div>
 
     <div class="footer_app">
         <img src="/img/profil.png" alt="" class="footer_img">

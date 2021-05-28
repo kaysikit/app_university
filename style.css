@@ -118,6 +118,65 @@ h3{
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
 }
 
+label{
+    color: black;
+    width: auto;
+}
+
+.form_auth_block{
+    width: 80%;
+    margin: 0 auto;
+    background-size: cover;
+    border-radius: 4px;
+    border: 2px solid #292929;
+    margin-top: 25%;
+    margin-bottom: 25%;
+}
+.form_auth_block_content{
+    padding: 5px 0px 5px 0px;
+}
+.form_auth_block_head_text{
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    background: #ffffff;
+}
+.form_auth_block label{
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: #ffffff;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.form_auth_block input{
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  height: 45px;
+  border-radius: 10px;  
+  border:none;
+  outline: none;
+}
+input:focus {
+  color: #000000;
+  border-radius: 10px;
+  border: 2px solid #292929;
+}
+.form_auth_button{
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+}
+
 @media only screen and (max-width:411px){
     .qr{
         max-width: 137px;
